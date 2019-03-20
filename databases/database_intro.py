@@ -16,31 +16,32 @@ nonalcoholic = ['tea', 'water', 'orange juice']
 # number of drinks per hour people drink, depeneding on the type.
 number_of_drinks_per_hour_per_type = {'cocktails':1, 'beers':3,'wines':2,'liquors':2,'nonalcoholic':3}
 
+party_duration_hours = int(input("How many hours you think you'll paaartaaay: "))
+
 cocktailsToBuy = 0
 winesToBuy = 0
 liquorsToBuy = 0
 nonalcoholicToBuy = 0
 
-print(len(favorite_drinks))
-
+##Loops through favorite_drinks 'values'.
+# Checks if value is in type of drink list.
+# upates '...toBuy' list variables
 for drink in favorite_drinks.values():
-    print(drink)
     if drink in cocktails:
-        cocktailsToBuy += 6
-        print(cocktailsToBuy)
+        cocktailsToBuy += party_duration_hours
+        #print(cocktailsToBuy)
     elif drink in wines:
-        winesToBuy += 6
-        print(winesToBuy)
-    elif drink.title() in liquors:
-        liquorsToBuy += 6
-        print(liquorsToBuy)
-    elif drink in nonalcoholic:
-        nonalcoholicToBuy += 6
-        print(nonalcoholicToBuy)
+        winesToBuy += party_duration_hours
+        #print(winesToBuy)
+    elif drink.lower() in liquors:
+        liquorsToBuy += party_duration_hours
+        #print(liquorsToBuy)
+    elif drink.lower() in nonalcoholic:
+        nonalcoholicToBuy += party_duration_hours
+        #print(nonalcoholicToBuy)
 
-
-print("You bunch of heavy drinkers...")
 print("""
+\n"You bunch of heavy drinkers..."
 You need to puchase:
 '{}' Cocktails,
 '{}' Wines,
