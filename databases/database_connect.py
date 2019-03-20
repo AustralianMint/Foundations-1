@@ -1,19 +1,19 @@
-## simple demo script for showing how to connect to an sqlite DB 
-# from Python, and run a simple SQL query 
+## simple demo script for showing how to connect to an sqlite DB
+# from Python, and run a simple SQL query
 
-# import the python library for SQLite 
+# import the python library for SQLite
 import sqlite3
 
 # connect to the database file, and create a connection object
 db_connection = sqlite3.connect('restaurants.db')
 
-# create a database cursor object, which allows us to perform SQL on the database. 
+# create a database cursor object, which allows us to perform SQL on the database.
 db_cursor = db_connection.cursor()
 
-# run a first query 
-db_cursor.execute("SELECT * from restaurants")
+# run a first query
+db_cursor.execute("SELECT NAME, NEIGHBORHOOD_ID FROM restaurants")
 
-# store the result in a local variable. 
+# store the result in a local variable.
 # this will be a list of tuples, where each tuple represents a row in the table
 list_restaurants = db_cursor.fetchall()
 
